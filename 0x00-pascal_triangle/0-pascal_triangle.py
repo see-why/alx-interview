@@ -9,13 +9,13 @@ def factorial(n):
 def combination(n, r):
     return int(factorial(n) / (factorial(r) * factorial(n-r)))
 
-def print_row(n):
+def generate_row(n):
     array = [1]
     if n == 2:
         array.append(1)
     elif n > 2:
         array += compute_coefficients(n-1) + [1]
-    print(array)
+    return array
 
 def compute_coefficients(n):
     array = []
@@ -29,5 +29,8 @@ def compute_coefficients(n):
     return result
 
 def pascal_triangle(n):
+    result = []
     for i in range(1,n+1):
-        print_row(i)
+        result.append(generate_row(i))
+
+    return result
