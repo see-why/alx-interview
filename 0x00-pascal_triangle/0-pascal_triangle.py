@@ -1,4 +1,4 @@
-import math
+#!/usr/bin/python3
 
 def factorial(n):
     if n <= 1:
@@ -19,7 +19,7 @@ def generate_row(n):
 
 def compute_coefficients(n):
     array = []
-    stop_index = math.ceil(n/2)+1
+    stop_index = int((n/2)+1) if ((n % 2) == 0) else int(((n+1)/2)+1)
     for i in range(1,stop_index):
         array.append(combination(n, i))
 
