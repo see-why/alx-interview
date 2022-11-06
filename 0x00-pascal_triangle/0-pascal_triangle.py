@@ -29,10 +29,11 @@ def compute_coefficients(n):
     return result
 
 def pascal_triangle(n):
-    result = []
+    result = [""]
 
     if n >= 1:
       for i in range(1,n+1):
           result.append(generate_row(i))
+      result = result[1:]
 
     return result
