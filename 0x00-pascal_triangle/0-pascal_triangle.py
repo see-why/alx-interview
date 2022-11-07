@@ -20,7 +20,7 @@ def combination(n, r):
     """
     Calculate nCr ie n combination r
     """
-    return int(factorial(n) / (factorial(r) * factorial(n - r)))
+    return (factorial(n) / (factorial(r) * factorial(n - r)))
 
 
 def generate_row(n):
@@ -42,7 +42,8 @@ def compute_coefficients(n):
     array = []
     stop_index = int((n / 2) + 1) if ((n % 2) == 0) else int(((n + 1) / 2) + 1)
     for i in range(1, stop_index):
-        array.append(combination(n, i))
+        com = combination(n, i)
+        array.append(str(com).split('.')[0])
 
     reversed = array[::-1]
 
@@ -54,11 +55,10 @@ def pascal_triangle(n):
     """
     Generates the entire pascal's triangle of an as an array of arrays
     """
-    result = [""]
+    result = []
 
     if n >= 1:
         for i in range(1, n + 1):
             result.append(generate_row(i))
-        result = result[1:]
 
     return result
