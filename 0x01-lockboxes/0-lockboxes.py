@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 """
-0-lockboxes.py contains a function canUnlockAll that takes a list of list as input and returns a true
-or false value if all the boxes(sub lists) can be unlocked using the keys in them.
+0-lockboxes.py contains a function canUnlockAll that takes a list
+of list as input and returns a true or false value if all the
+boxes(sub lists) can be unlocked using the keys in them.
 """
 
 
 def canUnlockAll(boxes):
     """
-    Determines if a list of boxes with keys in them can be all be opened, each box may contains keys, the
-    first box is always opened.
+    Determines if a list of boxes with keys in them can be all be
+    opened, each box may contains keys, the first box is always opened.
     """
     keys = boxes[0]
     visited = {}
