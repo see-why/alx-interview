@@ -16,8 +16,10 @@ def canUnlockAll(boxes):
     for key in keys:
         if key in visited:
             continue
-        keys.extend((boxes[key]))
-        visited[key] = 1
+
+        if (key + 1) <= len(boxes):
+            keys.extend((boxes[key]))
+            visited[key] = 1
 
     keys = set(keys)
     boxes = set([item for box in boxes for item in box])
