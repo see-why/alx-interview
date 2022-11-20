@@ -17,21 +17,17 @@ def minOperations(n):
     elif n == 1:
         return 1
     else:
-        copy_size = 1
+        h_counter = 1
         operations = 1
-        counter = n - 1
+        copy_size = 1
 
-        while counter > 0:
-            if (n - (copy_size * 2)) == 0:
-                counter = 0
-                operations += 1
-            elif (n % (copy_size * 2) == 0):
-                counter -= copy_size
-                copy_size *= 2
+        while h_counter != n:
+            if ((n % h_counter) == 0) and (h_counter != 1):
+                copy_size = h_counter
+                h_counter += copy_size
                 operations += 2
             else:
-                counter -= copy_size
+                h_counter += copy_size
                 operations += 1
 
     return operations
-
