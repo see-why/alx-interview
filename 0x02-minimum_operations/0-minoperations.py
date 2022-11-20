@@ -12,10 +12,8 @@ def minOperations(n):
     Returns minimum steps needed to arrive
     at n H characters.
     """
-    if n == 0:
-        return n
-    elif n == 1:
-        return 1
+    if n <= 1:
+        return 0
     else:
         h_counter = 1
         operations = 1
